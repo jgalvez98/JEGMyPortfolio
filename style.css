@@ -61,7 +61,7 @@ p {
 .hero-image {
     height: 200px;
     width: 100%;
-    margin-bottom: 25px;
+
     background-image: url("../Challenge02/assets/subtitle-background.jpg");
     background-size: cover;
     background-position: center;
@@ -80,16 +80,20 @@ p {
 
  .about-me {
     flex: 3;
-    background-color: #fff;
-    padding: 50px;
+    background-color: #0b0b0b;
+    padding: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    border-left: 2px black solid;
     text-align: justify;
  }
 
+ .about-me p {
+ color: #ffffff;
+
+
+ }
   main {
     display: flex;
     flex-wrap: wrap;
@@ -98,7 +102,6 @@ p {
   
   aside {
     flex: 1;
-    background-color: #ffffff;
     padding: 45px;
     text-align: left;
     font-size: 40px;
@@ -107,90 +110,112 @@ p {
   }
 
   aside.custom {
-    background-image: url(assets/card-background.jpg);
+    background-color: #040404;
     flex: 1;
-    padding: 45px;
-    text-align: left;
+    padding: 30px;
+    border-right: 2px rgb(68, 14, 123) solid;
+
+  }
+
+  aside.custom-aboutme {
+  flex: 1;
+  background-color: #040404;
+  padding: 30px;
+  border-right: 2px rgb(68, 14, 123) solid;
+  }
+
+  .custom-aboutme h2 {
+    color: #ffffff;
+    padding-top: 30px;
+
   }
   
  aside.custom h2 {
    color: white;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   font-size: 40px;
+   font-size: 45px;
    text-align: center;
+   padding-top: 60px;
+   padding: 60px;
  }
 
-  aside.footer {
-    
-    flex: 1;
-    background-color: #0b0b0b;
-    padding: 45px;
-    text-align: left;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-
-  }
-
-  aside.footer h2 {
-
-    color: white;
-
-  }
-  
-  .products {
-    flex: 3;
-    background-image: url(assets/rightcard-background.jpg);
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-  }
-  
-  /* TODO: Add properties to the cards to achieve the required look */
-  .card {
-    border-style: none;
-    border-width: 1px;
-    padding: 2px;
-    margin: 2px;
-    
-  }
-  
-  .card p {
-    text-align: center;
-  }
-
-  
-  .card img {
-    width: 300px;
-    border-radius: 8px;
-    height: 300px;
-  }
-  
   .left-side {
-    display: flex;
+    flex: 1;
     flex-wrap: wrap;
 }
-
-.left-side .title {
-    width: 40px;
-    text-align: center;
+ 
+aside.custom-footer {
+ flex: 1;
+ text-align: center;
+ padding: 30px;
+ background-image: url(assets/card-background.jpg);
 
 }
 
-.left-side .section-container {
-    width: 88%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+aside.custom-footer h1 {
+  color: #ffffff;
 }
+
 
 .section-container ul{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  background-color: #040404;
+}
+
+.section-container li {
+  color: rgb(250, 249, 249);
+  font-size: 20px;
+}
+
+.card {
+  flex: 1 1 0.5;
+  text-align: center;
+  border-style: none;
+  border-width: 0.2px;
+}
+
+.card img {
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
   width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 300px;
+}
+.firstcontainer {
+  padding-left: 32px;
+  background-color: #040404;
+  position: relative;
+  max-width: 300px;
+}
+
+.firstcontainer:hover .overlay {
+  opacity: 1;
 }
 
   @media screen and (max-width: 768px) {
