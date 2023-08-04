@@ -1,4 +1,4 @@
-## M Portfolio
+## My Portfolio
 # Description
 Here you can see my portfolio projects and get to know about me.
 
