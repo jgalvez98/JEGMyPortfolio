@@ -13,7 +13,8 @@ N/A
 ## cruice control image and url
 Cruise Control (ivega16.github.io)
 
-![Web capture_3-8-2023_23206_ivega16 github io](https://github.com/jgalvez98/JEGMyPortfolio/assets/71774194/b5d5ad26-1bc1-47d9-9c8f-6f5f5890f247)
+<img width="959" alt="cruice port" src="https://github.com/jgalvez98/JEGMyPortfolio/assets/71774194/9155cab4-d127-4295-a5e2-70ff3d2cb2b3">
+
 
 ## Credits
 w3schools.com and and my group project 1 for making cruice control possible.
