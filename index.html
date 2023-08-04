@@ -1,88 +1,343 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <title>Challengue02Portfolio</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../Challenge02/reset.css">
-    <link rel="stylesheet" type="text/css" href="../Challenge02/style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header">
-        <h1><a href="#">Juan.E G</a></h1>
-        <div role="navigation">
-            <ul>
-                <li>
-                    <a href="#About me" >About me</a>
-                </li>
-                <li>
-                    <a href="#work">Work</a>
-                </li>
-                <li>
-                    <a href="#Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="#Resume">Resume</a>
-                </li>
-            </ul>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Control</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="py-5">
+        <h1 class="logo font-sans subpixel-antialiased">Cruise Control</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#itinerary">Itinerary</a>
+            <a href="#excursions">Excursions</a>
+            <a href="#currency-exchange">Currency Exchange</a>
+            <a href="#weather">Weather</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+    </header>
+    <section class="py-1.5">
+        <h1 id="tinerary" class="itinerary-head text-xl font-bold py-2.5 my-4	hidden">Itinerary</h1>
+        <table class="table-fixed w-full mx-auto border-collapse border border-white-500 hidden">
+            <thead class="static">
+                <tr class="text-center">
+                    <th class="w-1/7 py-3 px-4 border-b">Date</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Destination</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Arrival</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Gate Open</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Scheduled Excursion(s)</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Gate Close</th>
+                    <th class="w-1/7 py-3 px-4 border-b">Departure</th>
+                </tr>
+
+                <div class=" inline-block selection-menu ">
+                    <div class="dropdown pl-20 py-8 pb-20 px-5  ">
+                        <button onclick="myFunction(this);" id="button1"
+                            class="relative dropbtn first-select px-10"><img id="icon2"
+                                class="absolute bottom-3 right-1" src="./assets/images/down-arrow.png" alt="arrow icon"
+                                width="30" height="30">Destination</button>
+                        <div id="myDropdown1" class="dropdown-content locationlist">
+                            <a id="bahamas-btn" href="#">Bahamas</a>
+                            <a id="carribean-btn" href="#">Carribean</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown ">
+                        <button onclick="myFunction(this);" id="button2"
+                            class="relative dropbtn second-select px-10 mr-5"><img id="icon2"
+                                class="absolute bottom-3 right-1" src="./assets/images/down-arrow.png" alt="arrow icon"
+                                width="30" height="30">Event
+                            Type</button>
+                        <div id="myDropdown2" class="dropdown-content cruisetypelist">
+                            <a id="4day-btn" href="#">4-day Cruise</a>
+                        </div>
+                    </div>
+                    <button id="submit" class="static submit border-solid border-2 px-2">Get your Itinerary</button>
+                </div>
+
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <td class="py-2">Thursday, August 3rd 2023</td>
+                    <td class="py-2">Bahamas</td>
+                    <td class="py-2">6:30 AM</td>
+                    <td class="py-2">8:00 AM</td>
+                    <td class="py-2">Excursion 1: Meet at Kiosk 6 (Start Time: 10:30 AM)</td>
+                    <td class="py-2">6:00 PM</td>
+                    <td class="py-2">7:00 PM</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="py-2">Friday, August 4th 2023</td>
+                    <td class="py-2">Puerto Rico</td>
+                    <td class="py-2">7:30 AM</td>
+                    <td class="py-2">9:00 AM</td>
+                    <td class="py-2">Excursion 2: Meet at Gate (Start Time: 11:00 AM)</td>
+                    <td class="py-2">4:30 PM</td>
+                    <td class="py-2">5:00 PM</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="py-2">Saturday, August 5th 2023</td>
+                    <td class="py-2">Dominican Republic</td>
+                    <td class="py-2">6:30 AM</td>
+                    <td class="py-2">8:00 AM</td>
+                    <td class="py-2">Excursion 3: Meet at Lobby (Start Time: 9:30 AM)</td>
+                    <td class="py-2">5:00 PM</td>
+                    <td class="py-2">6:00 PM</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="py-2">Sunday, August 6th 2023</td>
+                    <td class="py-2">Turks & Caicos</td>
+                    <td class="py-2">5:30 AM</td>
+                    <td class="py-2">7:00 AM</td>
+                    <td class="py-2">Excursion 1: Meet at Kiosk 1 (Start Time: 8:30 AM)</td>
+                    <td class="py-2">7:00 PM</td>
+                    <td class="py-2">8:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="py-1.5" id="excursions">
+        <h1 class="excursions-head text-xl font-bold py-2.5 my-4 mx-5">Excursions</h1>
+        <div class="photos flex justify-center overflow-x-auto scroll-snap-type-x mandatory mx-5">
+
+            <img src="./assets/images/excursions-1.avif" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-2.webp" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-3.jpeg" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-4.jpeg" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-5.png" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-6.jpeg" alt="" class="scroll-snap-align start object-cover">
+            <img src="assets/images/excursions-7.jpeg" alt="" class="scroll-snap-align start object-cover">
+            <img src="./assets/images/excursions-8.jpeg" alt="" class="scroll-snap-align start object-cover">
         </div>
-     </div>
-    <div class="hero-image">
-      <div class="hero-text">
-        <h1><a href="#">know my work</a></h1>
-      </div>
-     </div>   
-     <!------ about me ------>
-    <main>
-    <aside class="custom-aboutme">
-        <h2>About 
-          me</h2>
-        </aside>
-        <div class="about-me">
-            <p>Currently i am a full stock developer student at MIA bootcamp. I am passionate about using technology to solve real-world problems. 
-              I want to be proficient in a variety of programming languages, including Java, Python, and C++, an also be skilled in database design and development.
-               In my spare time, i enjoy working on personal projects, such as developing mobile apps and websites.
-                Lastly, i am excited to pursue a career in software development after graduation.</p>
+        <div class="excursions-list mt-4 mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Kayaking in the Bahamas:</p>
+                <p>
+                    Paddle through crystal-clear waters and explore hidden coves and mangrove forests. Discover the
+                    rich marine life and breathtaking coral reefs, making it a perfect adventure for nature lovers and
+                    water enthusiasts.
+                </p>
+            </div>
+
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Off-roading in Dominican Republic:</p>
+                <p>
+                    Embark on an adrenaline-fueled off-road journey, driving through rugged terrains and lush tropical
+                    landscapes. Experience the authentic beauty of the Dominican Republic and witness stunning panoramic
+                    views from mountain peaks.
+                </p>
+            </div>
+
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Zip-lining in Puerto Rico:</p>
+                <p>
+                    Soar above the lush rainforest canopy as you zip-line through thrilling courses. Feel the rush of
+                    adrenaline as you glide from platform to platform, enjoying breathtaking views of the surrounding
+                    landscapes.
+                </p>
+            </div>
+
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Snorkeling with Stingrays in Turks and Caicos:</p>
+                <p>
+                    Dive into the crystal-clear waters of Turks and Caicos and swim alongside friendly stingrays.
+                    Experience the thrill of interacting with these majestic creatures while exploring the vibrant
+                    marine life of the Caribbean.
+                </p>
+            </div>
+
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Ocean Trampoline:</p>
+                <p>
+                    Bounce and play on a floating trampoline in the middle of the ocean. Enjoy the refreshing sea
+                    breeze as you have fun with friends and family on this unique water attraction.
+                </p>
+            </div>
+
+            <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                <p class="font-bold">Paddle Boarding through Dominican Republic:</p>
+                <p>
+                    Glide peacefully on a paddleboard through calm waters, witnessing the beauty of the Dominican
+                    coastline. Perfect for beginners and seasoned paddlers alike, this excursion offers a serene and
+                    unforgettable experience.
+                </p>
+            </div>
         </div>
-</main>
-<!------ work----- -->
-      <main>
-      <aside class="custom">
-        <h2>Work</h2>
-      </aside>
-      
-<!--------column img-------->
-<div class="firstcontainer">
-<section class="card">
-  <img src="./assets/css.jpg" alt="css" />
-  <div class="overlay">css</div>
-</div>
-</section>
-<div class="container">
-<section class="card">
-  <img src="./assets/html5.jpg" alt="html5" />
-  <div class="overlay">html5</div>
-</section>
-</div>
-<div class="container">
-<section class="card">
-  <img src="./assets/python.jpg" alt="pyhton" />
-  <div class="overlay">python</div>
-</section>
-</div>
-</main>
-      
-        <!-- Footer -->
-        <aside class="custom-footer">
-        <h1 class="title">Contact Me</h1>
-        </aside>
-          <section class="section-container">
-            <ul>
-              <li>555-555-5555</li>
-              <li>email</li>
-              <li>github</li>
-              <li>gitlab</li>
-            </ul>
-          </section>
-  </body>
+    </section>
+    <section class="py-1.5 overflow-auto" id="currency-exchange">
+        <h1 class="currency-head text-xl font-bold py-2.5 my-4 mx-5">Currency Exchange</h1>
+        <ul class="flex flex-col items-center mt-3" id="exchange-rates">
+            <!-- Exchange rate data will be dynamically added here -->
+        </ul>
+    </section>
+    <!-----------------------Weather section----------------------------------------------->
+    <section class="py-1.5">
+        <h1 class="weather-head text-xl font-bold py-2.5 my-4">Current Weather</h1>
+        <div class="card">
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search">
+                <button id="button-weather"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 1024 1024" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+                        </path>
+                    </svg></button>
+            </div>
+            <div class="weather loading">
+                <h2 class="city">Weather in miami</h2>
+                <h1 class="temp">98°F</h1>
+                <div class="flex">
+                    <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+                    <div class="description">Sunny</div>
+                </div>
+                <div class="humidity">Humidity: 58%</div>
+                <div class="wind">Wind speed: 6.2 MPH</div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------Google Maps-------------------------------------------->
+    <section class="py-1.5">
+        <h1 class="weather-head text-xl font-bold py-2.5 my-4">Maps</h1>
+        <div class="box-content">
+            <div class="p-px mx-30 pr-0.5 float-left mx-7 items-center">
+          <!----     <p id="maps-text">Locate a port or calculate your driving distance</p> --->
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="from" class=""></label>
+                        <div class="p-3 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-1">
+                            <input type="text" id="from" placeholder="Origin" class="caret-blue-500 text-black">
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+
+                        <label for="to" class=""></label>
+                        <div class="p-3 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-1">
+                            <input type="text" id="to" placeholder="Destination" class="caret-blue-500 text-black">
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <div class=" ml-20 p-2 w-9 m-9 bg-white rounded-xl shadow-lg flex items-center space-x-1">
+                    <button id="button-maps" class="btn btn-info btn-lg" onclick="calcRoute();"><i
+                            class="fas fa-directions"></i></button>
+                </div>
+            </div>
+            </div>
+            <div class="mr-30">
+                <div id="googleMap">
+                    </div>
+            </div>
+
+                    <div id="output" class="ml-64 text-white ">
+
+                    </div>
+        
+    </section>
+
+        <!----------------------------------------------------------------------------------------->
+        <section class="py-1.5">
+            <h1 class="gallery-head text-xl font-bold py-2.5 my-4 mx-5">Gallery</h1>
+            <div class="photos flex justify-center overflow-x-auto scroll-snap-type-x mandatory mx-5">
+                <img src="./assets/images/cruise-1.jpeg" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-2.webp" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-3.jpeg" alt="" class="scroll-snap-align start">
+                <img src="" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-5.webp" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-6.jpeg" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-7.jpeg" alt="" class="scroll-snap-align start">
+                <img src="./assets/images/cruise-8.jpeg" alt="" class="scroll-snap-align start">
+            </div>
+            <h1 class="review-head text-xl font-bold py-4 my-4 text-center mx-5">User Reviews</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-5">
+
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by JaneDoe87:</p>
+                    <p>Cruise Control made planning my dream cruise a breeze! The beautiful design and user-friendly
+                        interface allowed me to easily explore various destinations and excursions. The dynamic events
+                        search feature kept me updated on local entertainment options. I highly recommend Cruise Control
+                        to all cruise enthusiasts!</p>
+                </div>
+
+
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by SailingSam:</p>
+                    <p>I stumbled upon Cruise Control while planning my vacation, and I'm thrilled I did! The itinerary
+                        section helped me keep track of all the exciting destinations and activities. The stunning
+                        gallery left me in awe, giving me a sneak peek into what my cruise experience will be like.
+                        Fantastic website!</p>
+                </div>
+
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by TravelBug123:</p>
+                    <p>Cruise Control is the ultimate one-stop-shop for cruise information. The wave logo next to the
+                        name adds a lovely touch of elegance. The weather forecast was a helpful addition to my
+                        itinerary
+                        planning. Kudos to the team for creating such a dynamic and professional website!</p>
+                </div>
+
+
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by AdventureSeeker69:</p>
+                    <p>Cruise Control is a game-changer for cruise travelers like me! The tailored excursions section
+                        offered a wide range of thrilling options to suit every taste. The local entertainment search
+                        feature was my favorite, allowing me to discover exciting events at each destination. I can't
+                        wait to set sail!</p>
+                </div>
+
+
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by SeaBreeze21:</p>
+                    <p>Cruise Control is a hidden gem in the world of cruise planning. The site's simplicity and
+                        aesthetic appeal make it a joy to use. I loved how the images in the gallery were uniformly
+                        displayed, giving a perfect view of the cruise destinations. This website is a must-have for
+                        anyone looking to embark on an unforgettable cruise adventure!</p>
+                </div>
+                <div class="bg-cerulean-800 rounded-lg shadow-md p-4">
+                    <p class="font-bold">Review by HappyVoyager:</p>
+                    <p>Cruise Control is fantastic! It offers an excellent collection of exciting excursions, and the
+                        local entertainment search is a game-changer. The weather section helped me plan my outfits
+                        accordingly. The reviews by other users were invaluable in making my decision. Highly recommend
+                        this user-friendly website!</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0FAnNK2ASkoCK-6zxMo7gNySMUFQVnQ&libraries=places"></script>
+        <script>
+                (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+                    key: "AIzaSyAF0FAnNK2ASkoCK-6zxMo7gNySMUFQVnQ",
+                    v: "weekly",
+                });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js"
+            integrity="sha512-q4Xn+ZU2K+dqJPL8a3TiyGsDa31IkR/rLt/w+fy8jLrx8TdXj0dLM1Aq4aPXnOOKxHEya/bD9DePDB2DHm4jJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
