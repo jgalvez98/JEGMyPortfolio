@@ -13,6 +13,12 @@ N/A
 ## cruice control image and url
 Cruise Control (ivega16.github.io)
 
+## recipeasy full stack
+https://dashboard.heroku.com/apps/project-2-recipeasy
+
+![Screenshot 2023-10-02 at 9 12 57 PM](https://github.com/jgalvez98/JEGMyPortfolio/assets/71774194/de7c7256-13f5-40f8-8f28-39dcdf69f71c)
+
+
 <img width="959" alt="cruice port" src="https://github.com/jgalvez98/JEGMyPortfolio/assets/71774194/9155cab4-d127-4295-a5e2-70ff3d2cb2b3">
 
 
